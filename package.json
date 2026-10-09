@@ -1,0 +1,19 @@
+{
+  "name": "saborr-futebol",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Controle financeiro do grupo de futebol saBORR futebol",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "npm run build -w web",
+    "start": "npm run start -w server",
+    "test": "npm test -w server"
+  }
+}
