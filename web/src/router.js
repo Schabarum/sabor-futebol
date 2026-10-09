@@ -33,7 +33,7 @@ const rotas = [
   { path: '/:pathMatch(.*)*', redirect: '/atletas' },
 ];
 
-const router = createRouter({ history: createWebHistory(), routes: rotas });
+const router = createRouter({ history: createWebHistory(import.meta.env.BASE_URL), routes: rotas });
 
 router.beforeEach((to) => {
   const exigido = to.matched.find((r) => r.meta.papel)?.meta.papel;

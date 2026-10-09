@@ -2,7 +2,7 @@
 
 Aplicação para controlar quem jogou, quanto cada jogo custou e quanto cada atleta ainda deve.
 
-- **Front-end:** Vue 3 + Quasar (Vite), em `web/`
+- **Front-end:** Vue 3 + Quasar (Vite), código em `web/` — entrada em `index.html` na raiz do repositório
 - **API:** Node.js puro (`node:http`, sem dependências), em `server/`
 - **Dados:** um único arquivo JSON, `server/data/db.json` (já populado com a planilha *Sabor futebol.xlsx*: 41 atletas e 19 jogos)
 
@@ -24,6 +24,20 @@ npm start                   # http://localhost:3000
 ```
 
 Testes da API: `npm test`.
+
+### GitHub Pages (só o front)
+
+A API Node **não roda** no GitHub Pages; publique apenas o build estático e aponte o front para uma API hospedada em outro lugar (ou use só leitura se você expuser a API).
+
+```bash
+# site de projeto: https://usuario.github.io/sabor-futebol/
+# ajuste VITE_BASE para /nome-do-repositorio/
+set VITE_BASE=/sabor-futebol/   # Windows (cmd)
+# export VITE_BASE=/sabor-futebol/   # Linux/macOS
+npm run build
+```
+
+Envie o conteúdo de `web/dist/` para a branch ou pasta que o Pages usa (muitos fluxos copiam `web/dist/*` para a raiz do site publicado). O `index.html` gerado pelo build já sai pronto para o Pages.
 
 ## Quem pode o quê
 
